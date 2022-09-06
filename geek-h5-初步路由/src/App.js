@@ -8,8 +8,8 @@ import {
 import './assets/styles/App.scss'
 import './assets/styles/index.scss'
 
-import Home from 'pages/Home'
-import Login from 'pages/Login'
+import Home from './pages/Home'
+import Login from './pages/Login'
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
           <use xlinkHref="#icon-shoutao"></use>
         </svg>
         <Switch>
-          <Redirect exact from="/" to="/home"/>
+          <Redirect exact from="/" to="/home"></Redirect>
           <Route path="/login" component={Login}></Route>
           <Route path="/home" component={Home}></Route>
         </Switch>
