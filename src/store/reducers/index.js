@@ -1,11 +1,11 @@
+import login from './login'
+import profile from './profile'
+
 const { combineReducers } = require('redux')
 
-function test(state = 0, action) {
-  return state
-}
-
 const reducer = combineReducers({
-  test,
+  login,
+  profile,
 })
 
 export default reducer

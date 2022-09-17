@@ -3,11 +3,7 @@
     "baseUrl": "./src",
     "jsx": "react",
     "paths": {
-      "@components": ["./components"],
-      "@pages": ["./pages"],
-      "@assets": ["./assets"],
-      "@images": ["./assets/img"],
-      "@icons": ["/components/Icon/"]
+      "@icon": ["src/components/Icon"]
     }
   }
 }

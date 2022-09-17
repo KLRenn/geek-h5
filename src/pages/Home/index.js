@@ -1,12 +1,5 @@
-import React from 'react'
-import Icon from 'components/Icon'
-
 const Home = () => {
-  return (
-    <div>
-      <Icon type={'icon - Leftbar_index_selected'}></Icon>
-    </div>
-  )
+  return <div>首页</div>
 }
 
 export default Home
