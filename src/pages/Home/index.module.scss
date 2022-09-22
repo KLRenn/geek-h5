@@ -1,4 +1,4 @@
-@import '@scss/hairline.scss';
+@import '../../assets/styles/hairline.scss';
 
 .root {
   height: 100vh;
@@ -6,6 +6,10 @@
   :global {
     .tabs-content-wrap {
       height: 100%;
+    }
+    .linkto {
+      display: flow-root;
+      display: block;
     }
     // .am-tabs-default-bar-nextpage {
     //   background: transparent;

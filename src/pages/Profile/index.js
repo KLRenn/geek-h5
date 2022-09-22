@@ -6,14 +6,14 @@ import { Link, useHistory } from 'react-router-dom'
 import styles from './index.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { getUser } from '../../store/actions/profile'
+import { getUserData } from '../../store/actions/profile'
 
 const Profile = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   /* 登录成功后，进入或刷新store/actions/profile都会执行useEffect()向后端获取user信息 */
   useEffect(() => {
-    dispatch(getUser())
+    dispatch(getUserData())
   }, [dispatch])
   const user = useSelector((state) => state.profile.user)
   return (
@@ -23,6 +23,9 @@ const Profile = () => {
         <div className="user-info">
           <div className="avatar">
             <img src={user.photo} alt="" />
+          </div>
+          <div className="linkto">
+            <Link to="/login">登录</Link>
           </div>
           <div className="user-name">{user.name}</div>
           <Link to="/profile/edit">

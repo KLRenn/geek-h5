@@ -1,16 +1,16 @@
-import Icon from '@/components/Icon'
+import Icon from '../../components/Icon'
 import {
   setMoreAction,
   unLinkArticle,
   reportArticle,
-} from '@/store/actions/home'
+} from '../../../../store/actions/home'
 import { Modal, Toast } from 'antd-mobile'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import styles from './index.module.scss'
 
-/* 
+/*
   1. 在redux中，需要新增一个数据
     moreAction: { visible: false, articleId: '', auth_id: '' }
 
@@ -28,7 +28,7 @@ import styles from './index.module.scss'
         moreAction: payload,
       }
     }
-  
+
   4. articleItem组件中，点击举报按钮，需要显示弹窗
     onClick={() =>
       dispatch(
@@ -38,7 +38,7 @@ import styles from './index.module.scss'
         })
       )
     }
-  
+
   5. 在moreAction中，点击遮罩，onClose事件，，，，关闭弹窗
         // 关闭弹框时的事件监听函数
         const onClose = () => {

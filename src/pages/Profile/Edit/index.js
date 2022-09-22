@@ -1,6 +1,5 @@
 import NavBar from '../../../components/NavBar'
 import {
-  DatePicker,
   List,
   Avatar,
   Button,
@@ -9,7 +8,7 @@ import {
   TextArea,
   Modal,
 } from 'antd-mobile'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import styles from './index.module.scss'
 import img from './logo192.png'
 import { useDispatch, useSelector } from 'react-redux'
@@ -23,14 +22,23 @@ import {
 } from '../../../store/actions/profile'
 import EditInput from './components/EditInput'
 import Actionsheet from './components/EditList'
-import Textarea from '../../../components/textarea'
-import Input1 from '../../../components/Input'
+import Datepicker from '../../../components/Datepicker'
 
 /* const { Item } = List */
 const ProfileEdit = () => {
   const fileRef = useRef()
   const history = useHistory()
   const dispatch = useDispatch()
+
+  const onBirthdayChange = (value) => {
+    console.log('value', value)
+    const date = `${value.getFullYear()}-${
+      value.getMonth() + 1
+    }-${value.getDate()}`
+    console.log('date', date)
+
+    dispatch(updateProfile('birthday', date))
+  }
 
   useEffect(() => {
     dispatch(getProfile())
@@ -48,6 +56,7 @@ const ProfileEdit = () => {
       type: 'gender',
     })
   }
+
   const userProfile = useSelector((state) => state.profile.profile || {})
   const { id, photo, name, gender, birthday, mobile, intro } = {
     ...userProfile,
@@ -55,9 +64,10 @@ const ProfileEdit = () => {
   /* console.log({ id, photo, name, gender, birthday, mobile }) */
   const [v1, setV1] = useState({
     visible1: false /* 控制 Popup 全屏弹出抽屉 */,
-    visible3: false /* 控制日期 DatePicker */,
+    visible3: false /* 控制日期 Datepicker */,
     title: '',
     type: '',
+    birthday: birthday,
   })
 
   const [openList, setOpenList] = useState({ visible: false, type: 'gender' })
@@ -156,7 +166,12 @@ const actions: Action[] = [
         ]
 
   const timeparse = (val) => {
-    let date = val ? new Date(val) : new Date()
+    /* function parseDate(val) {
+  var parts = val.match(/(\d+)/g);
+  // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+  return new Date(parts[0], parts[1]-1, parts[2]); // months are 0-based
+} */
+    let date = new Date(val)
     let y = date.getFullYear()
     let m = date.getMonth() + 1
     m = m < 10 ? '0' + m : m
@@ -196,7 +211,9 @@ const actions: Action[] = [
       <div className="content">
         {/* 顶部导航栏 */}
         <NavBar onLeftClick={() => history.go(-1)}>个人信息</NavBar>
-
+        <div className="linkto">
+          <Link to="/login">登录</Link>
+        </div>
         <div className="wrapper">
           {/* 头像 */}
           <List className="profile-list">
@@ -244,7 +261,7 @@ const actions: Action[] = [
                   type: 'intro',
                 })
               }}
-              extra={<div>{mobile || '请输入简介'}</div>}
+              extra={<div>{intro || '请输入简介'}</div>}
             >
               简介
             </List.Item>
@@ -260,7 +277,7 @@ const actions: Action[] = [
             >
               性别
             </List.Item>
-            {/* 生日 List.Item  DatePicker ------------------------------*/}
+            {/* 生日 List.Item  Datepicker ------------------------------*/}
             <List.Item
               onClick={() => {
                 setV1({
@@ -268,27 +285,18 @@ const actions: Action[] = [
                   type: 'name',
                   val1: name,
                   val2: mobile,
+                  birthday: birthday,
                 })
               }}
               extra={
                 <span className="adm-list-item-content-main">
-                  {birthday || '选择日期'}
-                  <DatePicker
-                    min={new Date(1900, 1, 1, 0, 0, 0)}
-                    max={new Date()}
-                    /* defaultValue={new Date()} */
-                    touch-action="none"
-                    mouseWheel="true"
+                  {v1.birthday || birthday || '选择日期'}
+                  <Datepicker
                     visible={v1.visible3}
                     onClose={onClose}
-                    precision="day"
-                    value={new Date()}
-                    onConfirm={(val) => {
-                      onCommit(birthday, timeparse(val))
-
-                      Toast.show('修改成功')
-                    }}
-                  ></DatePicker>
+                    birthday={birthday}
+                    onCommit={onBirthdayChange}
+                  ></Datepicker>
                 </span>
               }
             >

@@ -37,7 +37,7 @@ http.interceptors.response.use(
     console.log('error', error)
     if (error.response.status === 401) {
       const tokeninfo = getTokenInfo()
-      console(tokeninfo)
+      console.log(tokeninfo)
     }
 
     return Promise.reject(error)

@@ -18,7 +18,7 @@ export const saveUser = (payload) => {
  * 获取用户基本信息
  * @returns thunk
  */
-export const getUser = () => {
+export const getUserData = () => {
   return async (dispatch) => {
     const res = await http.get('/user')
     /* console.log('store/actions/profile获取个人中心user数据={...res.data}')
@@ -37,8 +37,8 @@ export const saveProfile = (payload) => {
 export const getProfile = () => {
   return async (dispatch) => {
     const res = await http.get('/user/profile')
-    /* console.log('store/actions/profile获取user/profile=res.data')
-    console.log(res) */
+
+    console.log('getProfile', res)
     dispatch(saveProfile(res.data))
   }
 }
@@ -47,7 +47,7 @@ export const updateProfile = (type, value) => {
   return async (dispatch) => {
     // 调用接口将数据更新到后端
     const res = await http.patch('/user/profile', { [type]: value })
-    console.log(type, value, res)
+    console.log('{[type]:value}', type, value, res)
 
     // 如果后端更新成功，则再更新 Redux 中的数据
     if (res.message === 'OK') {

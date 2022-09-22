@@ -2,11 +2,14 @@ import styles from './index.module.scss'
 import ArticleItem from '../ArticleItem'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getArticleList, getMoreArticleList } from '@/store/actions/home'
+import {
+  getArticleList,
+  getMoreArticleList,
+} from '../../../../store/actions/home'
 import { useSelector } from 'react-redux'
 import { PullToRefresh, InfiniteScroll } from 'antd-mobile-v5'
 
-/* 
+/*
   获取文章列表的数据
 
   // 获取频道1下最新的文章数据
@@ -40,7 +43,7 @@ import { PullToRefresh, InfiniteScroll } from 'antd-mobile-v5'
     频道的id4: {
       list: [文章的列表],
       timestamp: 时间戳
-    } 
+    }
   }
 
 

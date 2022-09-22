@@ -63,16 +63,21 @@ const Login = () => {
       code: '246810', //
     },
     // 需要用 utils/request 代替 try/catch
+    /**
+     * 登录跳转
+     * 在 AuthRoute组件 里记录拦截前的location于 from 属性
+     */
     onSubmit: async (values) => {
       await dispatch(login(values))
-
+      Toast.show('登录成功')
+      const pathname = location.state ? location.state.from : '/home'
       const { state } = location
       if (!state) {
         history.replace('/home/index')
       } else {
         // 跳转回要访问的页面
-        console.log(state)
-        history.replace(state.from)
+
+        history.push(pathname)
       }
     },
 
