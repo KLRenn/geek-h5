@@ -1,5 +1,5 @@
-import NavBar from '../../../../components/NavBar'
-import http from '../../../../utils/request'
+import NavBar from '@components/NavBar'
+import http from '@utils/request'
 import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 

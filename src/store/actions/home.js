@@ -1,4 +1,4 @@
-import http from '../../utils/request'
+import http from '@utils/request'
 import differenceBy from 'lodash/differenceBy'
 
 const getUser = (channels) => ({ type: 'home/channel', payload: channels })

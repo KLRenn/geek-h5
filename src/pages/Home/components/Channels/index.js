@@ -1,4 +1,4 @@
-import Icon from '../../components/Icon'
+import Icon from '@components/Icon'
 import { useSelector } from 'react-redux'
 import styles from './index.module.scss'
 // import { differenceBy } from 'lodash'
@@ -6,7 +6,7 @@ import differenceBy from 'lodash/differenceBy'
 import classNames from 'classnames'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addChannel, delChannel } from '../../../../store/actions/home'
+import { addChannel, delChannel } from '@store/actions/home'
 import { Toast } from 'antd-mobile'
 const Channels = ({ onClose, index, onChange }) => {
   const userChannels = useSelector((state) => state.home.userChannels)

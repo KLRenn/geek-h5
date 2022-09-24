@@ -1,4 +1,4 @@
-import Icon from '../../../../components/Icon'
+import Icon from '@components/Icon'
 import classnames from 'classnames'
 import dayjs from 'dayjs'
 import styles from './index.module.scss'

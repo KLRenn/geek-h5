@@ -1,8 +1,14 @@
 import React, { lazy, Suspense } from 'react'
-import { AuthRoute } from './components/AuthRoute'
+import { AuthRoute } from '@components/AuthRoute'
 import { history } from './utils'
-import { KeepAlive } from './components/KeepAlive'
-import { Router, Route, Switch, Redirect, Link } from 'react-router-dom'
+import { KeepAlive } from '@components/KeepAlive'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+  Link,
+} from 'react-router-dom'
 import { Button } from 'antd-mobile'
 /* import { Toast } from 'antd-mobile' */
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../../components/Icon'
+import Icon from '@components/Icon'
 import styles from './index.module.scss'
 import { useHistory } from 'react-router'
 // import { withRouter } from 'react-router-dom'

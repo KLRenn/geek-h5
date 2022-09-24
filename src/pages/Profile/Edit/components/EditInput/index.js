@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import NavBar from '../../../../../components/NavBar'
+import NavBar from '@components/NavBar'
 import styles from './index.module.scss'
-/* import Input1 from '../../../../../components/Input' */
+/* import Input1 from '@../components/Input' */
 import { Input, TextArea } from 'antd-mobile'
-/* import Textarea from '../../../../../components/textarea' */
+/* import Textarea from '@../components/textarea' */
 
 const EditInput = ({ onClose, userConfig, onCommit }) => {
   const [value, setValue] = useState(userConfig.value || '')

@@ -1,9 +1,9 @@
-import Icon from '../../components/Icon'
+import Icon from '@components/Icon'
 import {
   setMoreAction,
   unLinkArticle,
   reportArticle,
-} from '../../../../store/actions/home'
+} from '@store/actions/home'
 import { Modal, Toast } from 'antd-mobile'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'

@@ -1,6 +1,6 @@
 import styles from './index.module.scss'
 
-import noComment from '../../assets/none.png'
+import noComment from '@assets/none.png'
 
 const NoneComment = () => {
   return (

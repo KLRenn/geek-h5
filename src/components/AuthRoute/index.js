@@ -1,4 +1,4 @@
-import { getTokenInfo, hasToken } from '../../utils/'
+import { getTokenInfo, hasToken } from '@utils/'
 import { Redirect, Route, useLocation } from 'react-router-dom'
 
 // https://reactrouter.com/web/example/auth-workflow

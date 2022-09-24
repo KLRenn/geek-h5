@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { Switch, useHistory, useLocation, Route } from 'react-router-dom'
-import Icon from '../../components/Icon/index'
+import Icon from '@components/Icon/index'
 import styles from './index.module.scss'
 import classNames from 'classnames'
 /* import Home from '../Home'

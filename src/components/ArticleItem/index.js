@@ -5,8 +5,8 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import 'dayjs/locale/zh-cn'
 
-import Icon from '../../components/Icon'
-import Image from '../../components/Image'
+import Icon from '@components/Icon'
+import Image from '@components/Image'
 
 import styles from './index.module.scss'
 

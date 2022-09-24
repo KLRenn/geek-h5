@@ -1,4 +1,4 @@
-import Icon from '../../../../components/Icon'
+import Icon from '@components/Icon'
 import styles from './index.module.scss'
 
 const CommentFooter = ({

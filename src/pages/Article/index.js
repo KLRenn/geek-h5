@@ -1,7 +1,7 @@
-import Icon from '../../components/Icon'
-import NavBar from '../../components/NavBar'
-import NoneComment from '../../components/NoneComment'
-import Sticky from '../../components/Sticky'
+import Icon from '@components/Icon'
+import NavBar from '@components/NavBar'
+import NoneComment from '@components/NoneComment'
+import Sticky from '@components/Sticky'
 import {
   deleteCollection,
   deleteCommentLiking,
@@ -16,7 +16,7 @@ import {
   updateCommentLiking,
   updateFollow,
   updateLiking,
-} from '../../store/actions'
+} from '@store/actions'
 import { Popup } from 'antd-mobile'
 import classNames from 'classnames'
 import dayjs from 'dayjs'

@@ -1,18 +1,16 @@
-const webpack = require('webpack')
 const pxToViewport = require('postcss-px-to-viewport')
-const path = require('path')
-const CracoAliasPlugin = require('react-app-alias')
-
+const CracoAlias = require('craco-alias')
 module.exports = {
   plugins: [
     {
-      plugin: CracoAliasPlugin,
-      option: {
+      plugin: CracoAlias,
+      options: {
         source: 'jsconfig',
-        baseUrl: './src',
+        baseUrl: './',
       },
     },
   ],
+
   style: {
     postcss: {
       mode: 'extends',

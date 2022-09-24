@@ -1,15 +1,15 @@
 import classnames from 'classnames'
-import Icon from '../../components/Icon'
+import Icon from '@components/Icon'
 import styles from './index.module.scss'
 import dayjs from 'dayjs'
-import Img from '../../components/Img'
+import Img from '@components/Img'
 // 扩展dayjs，有显示相对时间的功能
 import relativeTime from 'dayjs/plugin/relativeTime'
 // 导入中文包
 import 'dayjs/locale/zh-cn'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { setMoreAction } from '../../../../store/actions/home'
+import { setMoreAction } from '@store/actions/home'
 dayjs.extend(relativeTime)
 dayjs.locale('zh-cn')
 

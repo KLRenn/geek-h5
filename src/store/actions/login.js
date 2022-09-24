@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
-import http from '../../utils/request'
-import { setTokenInfo, removeTokenInfo } from '../../utils/storage'
+import http from '@utils/request'
+import { setTokenInfo, removeTokenInfo } from '@utils/storage'
 
 /**
  * 发送短信验证码

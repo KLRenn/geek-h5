@@ -1,5 +1,5 @@
-import http from '../../utils/request'
-import { removeTokenInfo } from '../../utils/storage'
+import http from '@utils/request'
+import { removeTokenInfo } from '@utils/storage'
 import { SAVE_PROFILE, SAVE_USER, CLEAR_LOGIN } from '../action_types/profile'
 
 /**

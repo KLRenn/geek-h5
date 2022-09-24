@@ -1,4 +1,4 @@
-import NavBar from '../../../components/NavBar'
+import NavBar from '@components/NavBar'
 import {
   List,
   Avatar,
@@ -19,10 +19,10 @@ import {
   updateProfile,
   updateAvatar,
   logout,
-} from '../../../store/actions/profile'
+} from '@store/actions/profile'
 import EditInput from './components/EditInput'
 import Actionsheet from './components/EditList'
-import Datepicker from '../../../components/Datepicker'
+import Datepicker from '@components/Datepicker'
 
 /* const { Item } = List */
 const ProfileEdit = () => {

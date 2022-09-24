@@ -1,4 +1,4 @@
-import http from '../../utils/request'
+import http from '@utils/request'
 
 // 获取输入建议列表
 const setSuggetionList = (list) => ({ type: 'search/suggetion', payload: list })

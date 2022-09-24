@@ -1,12 +1,12 @@
 import './index.module.scss'
 
-import Icon from '../../components/Icon'
+import Icon from '@components/Icon'
 
 import { Link, useHistory } from 'react-router-dom'
 import styles from './index.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { getUserData } from '../../store/actions/profile'
+import { getUserData } from '@store/actions/profile'
 
 const Profile = () => {
   const history = useHistory()
