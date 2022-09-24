@@ -50,12 +50,27 @@ webstorm 配置成功，ctrl + 鼠标悬停 可以显示完整路径
 
 
 
+### 4 导入Router失败
+
+取消导入 `BrowserRouter` ，但 `history.location.pathname` 读取失败，无点击事件时，`pathname` 正常，有点击事件，`history` 变化时，
+
+```jsx
+/* App.js */
+<Router history={history}></Router>
+```
 
 
 
+```
+location:
+{
+	action:'push',
+	locaion:{}
+}
+```
+
+即使读取 `history.location.location.pathname` 仍无法读取 `pathname` 。
 
 ### bottom
 
 
-
-解决路径别名问题
